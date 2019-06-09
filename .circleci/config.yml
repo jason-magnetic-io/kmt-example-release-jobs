@@ -3,6 +3,15 @@ defaults: &defaults
   docker:
     - image: vampio/kmt:circleci-latest
 jobs:
+  do-nothing:
+    <<: *defaults
+    steps:
+      - checkout
+      - run:
+          name: Does nothing
+          command: |
+            echo "Doing nothing"
+ 
   update-rp-sava-cart-204-pt-prod:
     <<: *defaults
     steps:
@@ -14,3 +23,14 @@ jobs:
               --release-plan release-plans/sava-cart-2.0.4.json \
               --environment-name pt-production \
               --release-status finished
+
+workflows:
+  version: 2
+  should-not-run:
+    jobs:
+      - do-nothing:
+          filters:
+            branches:
+              ignore: /.*/
+            tags:
+              only: /^v.*/
