@@ -1,0 +1,16 @@
+version: 2.0
+defaults: &defaults
+  docker:
+    - image: vampio/kmt:circleci-latest
+jobs:
+  update-rp-sava-cart-204-pt-prod:
+    <<: *defaults
+    steps:
+      - checkout
+      - run:
+          name: Update sava-cart-2.0.4 with pt-production finished
+          command: |
+            python3 bin/update-release-plan.py \
+              --release-plan release-plans/sava-cart-2.0.4.json \
+              --environment-name pt-production \
+              --release-status finished
