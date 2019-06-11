@@ -76,6 +76,262 @@ jobs:
                 echo "No change were detected. Skipping."
               fi
 
+  update-rp-sava-cart-204-ie-prod:
+    <<: *defaults
+    steps:
+      - checkout
+      - add_ssh_keys:
+          fingerprints:
+            - "41:b7:9d:18:03:ed:d8:44:1b:ef:7a:29:43:3a:60:2b"
+            - "92:ca:b9:9d:2b:a6:14:3e:f5:45:4c:bb:d9:cf:04:ed"
+      - run:
+          name: Update sava-cart-2.0.4 with ie-production finished
+          command: |
+              git clone https://github.com/$CIRCLE_PROJECT_USERNAME/kmt-example-brands.git
+              cd kmt-example-brands
+              
+              python3 bin/update-release-plan.py \
+              --release-plan release-plans/sava-cart-2.0.4.json \
+              --environment-name ie-production \
+              --release-status finished
+              
+              echo "true" > updated
+            
+              git add .
+              if [ `git status -s | wc -l` -gt 0 ]
+              then
+                git config user.email "${GITHUB_EMAIL}"
+                git config user.name "${CIRCLE_USERNAME}"
+                git commit -m "Release plan updated"
+                git pull --rebase && git push origin master
+              else
+                echo "No change were detected. Skipping."
+              fi
+
+  update-rp-sava-product-201-ie-prod:
+    <<: *defaults
+    steps:
+      - checkout
+      - add_ssh_keys:
+          fingerprints:
+            - "41:b7:9d:18:03:ed:d8:44:1b:ef:7a:29:43:3a:60:2b"
+            - "92:ca:b9:9d:2b:a6:14:3e:f5:45:4c:bb:d9:cf:04:ed"
+      - run:
+          name: Update sava-product-2.0.1 with ie-production finished
+          command: |
+              git clone https://github.com/$CIRCLE_PROJECT_USERNAME/kmt-example-brands.git
+              cd kmt-example-brands
+              
+              python3 bin/update-release-plan.py \
+              --release-plan release-plans/sava-product-2.0.1.json \
+              --environment-name ie-production \
+              --release-status finished
+              
+              echo "true" > updated
+            
+              git add .
+              if [ `git status -s | wc -l` -gt 0 ]
+              then
+                git config user.email "${GITHUB_EMAIL}"
+                git config user.name "${CIRCLE_USERNAME}"
+                git commit -m "Release plan updated"
+                git pull --rebase && git push origin master
+              else
+                echo "No change were detected. Skipping."
+              fi
+
+  update-rp-sava-cart-204-se-prod:
+    <<: *defaults
+    steps:
+      - checkout
+      - add_ssh_keys:
+          fingerprints:
+            - "41:b7:9d:18:03:ed:d8:44:1b:ef:7a:29:43:3a:60:2b"
+            - "92:ca:b9:9d:2b:a6:14:3e:f5:45:4c:bb:d9:cf:04:ed"
+      - run:
+          name: Update sava-cart-2.0.4 with se-production finished
+          command: |
+              git clone https://github.com/$CIRCLE_PROJECT_USERNAME/kmt-example-brands.git
+              cd kmt-example-brands
+              
+              python3 bin/update-release-plan.py \
+              --release-plan release-plans/sava-cart-2.0.4.json \
+              --environment-name se-production \
+              --release-status finished
+              
+              echo "true" > updated
+            
+              git add .
+              if [ `git status -s | wc -l` -gt 0 ]
+              then
+                git config user.email "${GITHUB_EMAIL}"
+                git config user.name "${CIRCLE_USERNAME}"
+                git commit -m "Release plan updated"
+                git pull --rebase && git push origin master
+              else
+                echo "No change were detected. Skipping."
+              fi
+
+  update-rp-sava-product-201-se-prod:
+    <<: *defaults
+    steps:
+      - checkout
+      - add_ssh_keys:
+          fingerprints:
+            - "41:b7:9d:18:03:ed:d8:44:1b:ef:7a:29:43:3a:60:2b"
+            - "92:ca:b9:9d:2b:a6:14:3e:f5:45:4c:bb:d9:cf:04:ed"
+      - run:
+          name: Update sava-product-2.0.1 with se-production finished
+          command: |
+              git clone https://github.com/$CIRCLE_PROJECT_USERNAME/kmt-example-brands.git
+              cd kmt-example-brands
+              
+              python3 bin/update-release-plan.py \
+              --release-plan release-plans/sava-product-2.0.1.json \
+              --environment-name se-production \
+              --release-status finished
+              
+              echo "true" > updated
+            
+              git add .
+              if [ `git status -s | wc -l` -gt 0 ]
+              then
+                git config user.email "${GITHUB_EMAIL}"
+                git config user.name "${CIRCLE_USERNAME}"
+                git commit -m "Release plan updated"
+                git pull --rebase && git push origin master
+              else
+                echo "No change were detected. Skipping."
+              fi
+
+  update-rp-sava-cart-204-nl-prod:
+    <<: *defaults
+    steps:
+      - checkout
+      - add_ssh_keys:
+          fingerprints:
+            - "41:b7:9d:18:03:ed:d8:44:1b:ef:7a:29:43:3a:60:2b"
+            - "92:ca:b9:9d:2b:a6:14:3e:f5:45:4c:bb:d9:cf:04:ed"
+      - run:
+          name: Update sava-cart-2.0.4 with nl-production finished
+          command: |
+              git clone https://github.com/$CIRCLE_PROJECT_USERNAME/kmt-example-brands.git
+              cd kmt-example-brands
+              
+              python3 bin/update-release-plan.py \
+              --release-plan release-plans/sava-cart-2.0.4.json \
+              --environment-name nl-production \
+              --release-status finished
+              
+              echo "true" > updated
+            
+              git add .
+              if [ `git status -s | wc -l` -gt 0 ]
+              then
+                git config user.email "${GITHUB_EMAIL}"
+                git config user.name "${CIRCLE_USERNAME}"
+                git commit -m "Release plan updated"
+                git pull --rebase && git push origin master
+              else
+                echo "No change were detected. Skipping."
+              fi
+
+  update-rp-sava-product-201-nl-prod:
+    <<: *defaults
+    steps:
+      - checkout
+      - add_ssh_keys:
+          fingerprints:
+            - "41:b7:9d:18:03:ed:d8:44:1b:ef:7a:29:43:3a:60:2b"
+            - "92:ca:b9:9d:2b:a6:14:3e:f5:45:4c:bb:d9:cf:04:ed"
+      - run:
+          name: Update sava-product-2.0.1 with nl-production finished
+          command: |
+              git clone https://github.com/$CIRCLE_PROJECT_USERNAME/kmt-example-brands.git
+              cd kmt-example-brands
+              
+              python3 bin/update-release-plan.py \
+              --release-plan release-plans/sava-product-2.0.1.json \
+              --environment-name nl-production \
+              --release-status finished
+              
+              echo "true" > updated
+            
+              git add .
+              if [ `git status -s | wc -l` -gt 0 ]
+              then
+                git config user.email "${GITHUB_EMAIL}"
+                git config user.name "${CIRCLE_USERNAME}"
+                git commit -m "Release plan updated"
+                git pull --rebase && git push origin master
+              else
+                echo "No change were detected. Skipping."
+              fi
+
+  update-rp-sava-cart-204-uk-prod:
+    <<: *defaults
+    steps:
+      - checkout
+      - add_ssh_keys:
+          fingerprints:
+            - "41:b7:9d:18:03:ed:d8:44:1b:ef:7a:29:43:3a:60:2b"
+            - "92:ca:b9:9d:2b:a6:14:3e:f5:45:4c:bb:d9:cf:04:ed"
+      - run:
+          name: Update sava-cart-2.0.4 with uk-production finished
+          command: |
+              git clone https://github.com/$CIRCLE_PROJECT_USERNAME/kmt-example-brands.git
+              cd kmt-example-brands
+              
+              python3 bin/update-release-plan.py \
+              --release-plan release-plans/sava-cart-2.0.4.json \
+              --environment-name uk-production \
+              --release-status finished
+              
+              echo "true" > updated
+            
+              git add .
+              if [ `git status -s | wc -l` -gt 0 ]
+              then
+                git config user.email "${GITHUB_EMAIL}"
+                git config user.name "${CIRCLE_USERNAME}"
+                git commit -m "Release plan updated"
+                git pull --rebase && git push origin master
+              else
+                echo "No change were detected. Skipping."
+              fi
+
+  update-rp-sava-product-201-uk-prod:
+    <<: *defaults
+    steps:
+      - checkout
+      - add_ssh_keys:
+          fingerprints:
+            - "41:b7:9d:18:03:ed:d8:44:1b:ef:7a:29:43:3a:60:2b"
+            - "92:ca:b9:9d:2b:a6:14:3e:f5:45:4c:bb:d9:cf:04:ed"
+      - run:
+          name: Update sava-product-2.0.1 with uk-production finished
+          command: |
+              git clone https://github.com/$CIRCLE_PROJECT_USERNAME/kmt-example-brands.git
+              cd kmt-example-brands
+              
+              python3 bin/update-release-plan.py \
+              --release-plan release-plans/sava-product-2.0.1.json \
+              --environment-name uk-production \
+              --release-status finished
+              
+              echo "true" > updated
+            
+              git add .
+              if [ `git status -s | wc -l` -gt 0 ]
+              then
+                git config user.email "${GITHUB_EMAIL}"
+                git config user.name "${CIRCLE_USERNAME}"
+                git commit -m "Release plan updated"
+                git pull --rebase && git push origin master
+              else
+                echo "No change were detected. Skipping."
+              fi
+
 workflows:
   version: 2
   should-not-run:
