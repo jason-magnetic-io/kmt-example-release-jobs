@@ -31,7 +31,7 @@ jobs:
               --environment-name pt-production \
               --release-status finished
               
-              echo "true" > updated
+              date > updated
             
               git add .
               if [ `git status -s | wc -l` -gt 0 ]
@@ -63,7 +63,7 @@ jobs:
               --environment-name pt-production \
               --release-status finished
               
-              echo "true" > updated
+              date > updated
             
               git add .
               if [ `git status -s | wc -l` -gt 0 ]
@@ -95,7 +95,7 @@ jobs:
               --environment-name ie-production \
               --release-status finished
               
-              echo "true" > updated
+              date > updated
             
               git add .
               if [ `git status -s | wc -l` -gt 0 ]
@@ -127,7 +127,7 @@ jobs:
               --environment-name ie-production \
               --release-status finished
               
-              echo "true" > updated
+              date > updated
             
               git add .
               if [ `git status -s | wc -l` -gt 0 ]
@@ -159,7 +159,7 @@ jobs:
               --environment-name se-production \
               --release-status finished
               
-              echo "true" > updated
+              date > updated
             
               git add .
               if [ `git status -s | wc -l` -gt 0 ]
@@ -191,7 +191,7 @@ jobs:
               --environment-name se-production \
               --release-status finished
               
-              echo "true" > updated
+              date > updated
             
               git add .
               if [ `git status -s | wc -l` -gt 0 ]
@@ -223,7 +223,7 @@ jobs:
               --environment-name nl-production \
               --release-status finished
               
-              echo "true" > updated
+              date > updated
             
               git add .
               if [ `git status -s | wc -l` -gt 0 ]
@@ -255,7 +255,7 @@ jobs:
               --environment-name nl-production \
               --release-status finished
               
-              echo "true" > updated
+              date > updated
             
               git add .
               if [ `git status -s | wc -l` -gt 0 ]
@@ -287,7 +287,7 @@ jobs:
               --environment-name uk-production \
               --release-status finished
               
-              echo "true" > updated
+              date > updated
             
               git add .
               if [ `git status -s | wc -l` -gt 0 ]
@@ -319,7 +319,7 @@ jobs:
               --environment-name uk-production \
               --release-status finished
               
-              echo "true" > updated
+              date > updated
             
               git add .
               if [ `git status -s | wc -l` -gt 0 ]
